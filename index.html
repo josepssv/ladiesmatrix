@@ -1,78 +1,282 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<htm<!DOCTYPE html>
+<html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Ladies matrix. Visual analyzer text</title>
+<meta name='author' content='' />
+<meta name='copyright' content='' />
+<script type="text/javascript" src="raphael.js"></script> 
+<script type='text/javascript' src='jquery.js'></script>
+<script type='text/javascript' src='ladiesmatrix.js'></script>
 
-	<title>josepssv/ladiesmatrix @ GitHub</title>
+
+
+<script>
+
+</script>
+
+
+
+<style>
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #555555 ;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #EEEEEE;
+}
+
+h1, h2, h3 {
+	color: #AA2808;
+}
+
+textarea {
+    margin: 0px 20px 8px 20px;
+    padding: 8px 20px 8px 20px;
+} 
+input {
+    margin: 0px 20px 8px 20px;
+} 
+a {
+	text-decoration: none;
+	color: #323B51;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #FF0000;
+}
+/* Header */
+
+#header {
+	width: 800px;
+	height: 67px;
+	margin: 0 auto;
+}
+
+/* Wrapper */
+
+#wrapper {
+}
+
+/* Logo */
+
+#logo {
+	float: left;
+	padding: 8px 0 0 15px;
+}
+
+#logo h1 {
+	margin: 0;
+	padding: 0;
+	font: normal 16px "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color: #DDDDDD;
+}
+
+#logo span {
+	margin: 5px 0 0 0;
+	padding: 0;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 10px;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+
+#logo a {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+/* Menu */
+
+#menu {
+	float: left;
+	width: 800px;
+	height: 30px;
+	padding-right: 20px;
 	
-	<style type="text/css">
-		body {
-  		margin-top: 1.0em;
-  		background-color: #2aa941;
-		  font-family: "Helvetica,Arial,FreeSans"; 
-  		color: #ffffff;
-    }
-    #container {
-      margin: 0 auto;
-      width: 700px;
-    }
-		h1 { font-size: 3.8em; color: #d556be; margin-bottom: 3px; }
-		h1 .small { font-size: 0.4em; }
-		h1 a { text-decoration: none }
-		h2 { font-size: 1.5em; color: #d556be; }
-    h3 { text-align: center; color: #d556be; }
-    a { color: #d556be; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
-    .download { float: right; }
-		pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
-	</style>
+}
+
+#menu ul {
+	margin: 0;
+	padding: 0px 0px 0px 20px;
+	list-style: none;
+	line-height: normal;
+	margin-left: 0px;
 	
+}
+
+#menu li {
+	display: inline;
+	text-align: center;
+}
+
+#menu a {
+	display: block;
+	float: left;
+	height: 20px;
+	padding: 10px 10px 0 10px;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 11px;
+	font-weight: bold;
+	color: #EEEEEE;                                      
+	text-decoration:none;
+}
+
+#menu a:hover, #menu .active a {
+	color: #FFFFFF;
+}
+
+/* Page */
+
+#page {
+       	width: 800px;
+	margin: 0 auto;
+}
+#viewmatrix {
+	width: 300px;
+	height:320px; 
+	
+	vertical-align:top;
+	margin:0 auto 0 auto;
+	background-color:#555555;
+}
+#content {
+	float: left;
+	width: 800px;
+	padding: 40px 0 0 35px;
+}
+
+/* Footer */
+
+#footer {
+	width: 800px;
+	height: 50px;
+	margin: 0 auto;
+	padding: 40px 0 0 0;
+	background: url(images/img06a.gif) no-repeat;
+	color: #FFFFFF;
+}
+
+#footer p {
+	margin: 0;
+	text-align: center;
+	font-size: 77%;
+}
+
+#footer a {
+	text-decoration: underline;
+	color: #FFFFFF;
+}
+
+#footer a:hover {
+	text-decoration: none;
+}                 
+
+/* class */
+.withe { 
+        font-weight:400;
+}
+.black { 
+        font-weight:800;
+}
+
+</style>
 </head>
 
-<body>
-  <a href="http://github.com/josepssv/ladiesmatrix"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
-  
-  <div id="container">
+<body onload="ini()">
+<div id="wrapper">
+	<div id="header">
+		<div id="logo">
+			<h1>Ladies Matrix &nbsp;<span>Visual analyzer text</span></h1>
 
-    <div class="download">
-      <a href="http://github.com/josepssv/ladiesmatrix/zipball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
-      <a href="http://github.com/josepssv/ladiesmatrix/tarball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
-    </div>
-      
-    <h1><a href="http://github.com/josepssv/ladiesmatrix">ladiesmatrix</a> 
-      <span class="small">by <a href="http://github.com/josepssv">josepssv</a></span></h1>
+			
+			
+		</div>
+		<!-- end div#logo -->
+	</div>
 
-    <div class="description">
-      Visual analyzer for text
-    </div>
+	<!-- end div#header -->
+	<div id="page">
+		<div id="content" style=" ">
+		       <div id="texto" style="width:400px;height:320px; margin:0px 20px 0px 0px; overflow: auto; float:left; clear:none;">
+		       </div>
 
-    <h2>Contact</h2>
-<p>Josep (josep.ssv@gmail.com)<br/>      </p>
+		       <div id="viewmatrix" style=" float:left;clear:none;">
+		       </div> 
+		
+				       		
+
+		
+		</div>
+		<!-- end div#content -->
+
+	</div>
+		       <div id="menu">
+		<ul>
+        		<li><a href="javascript:drawtext()">Analysis</a></li>
+
+			<li><a href="javascript:readsvg()">View svg</a></li>
+			<li><a href="javascript:skin.mode=0; skin.actual='cool_and_fire'; skin.style(); drawtext()">Cool_and_fire</a></li>
+			<li><a href="javascript:skin.mode=0; skin.actual='rainbow'; skin.style(); drawtext()">Rainbow</a></li>
+			<li><a href="javascript:skin.mode=0; skin.actual='greyscale'; skin.style(); drawtext()">Grey_scale</a></li>
+			<!--<li><a href="javascript:skin.mode=1; skin.fase=[0,0,0]; drawtext()">Personal color</a></li>-->
+		</ul>
+		
+	</div>
+
+		<!-- end div#menu -->
+
+	<!-- end div#page -->
+
+	<div id="footer">
+		<p id="legal"></p>
+		<p id="links"></p>
+	</div>
+	<!-- end div#footer -->
+ </div>
+
+<!-- end div#wrapper -->
 
 
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="http://github.com/josepssv/ladiesmatrix/zipball/master">zip</a> or
-      <a href="http://github.com/josepssv/ladiesmatrix/tarball/master">tar</a> formats.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/josepssv/ladiesmatrix</pre>
-    </p>
-      
-    <div class="footer">
-      get the source code on GitHub : <a href="http://github.com/josepssv/ladiesmatrix">josepssv/ladiesmatrix</a>
-    </div>
-    
-  </div>
+<form name="uno">
+<textarea name="datos" id="datos" style="width:93%;height:150px;">
+From Friends To Lovers
+by Joe Vieira
+Sometimes I feel sad and sometimes I feel blue
+but whenever I see you, I'm as happy as can be
+for you bring a smile upon my face
+and a feeling of joy within my heart
+you're like my sunshine in the morning
+and my stars that glow at night
+you're like the waves in the ocean
+the cool breeze in the wind
+like the call of the birds in the morning dew
+like the sounds of beauty in the night
+you see all of these things are of beauty and love
+that's how I feel whenever you are near
+for it was the passion and desire from both of us
+that opened up the world for our eyes to see
+for our love of each other will grow and grow
+and our needs and desires will be more everyday
+for a friend you once were and will always be
+has turned into love as it should have been
+so I want you to know as a friend and lover
+that in my heart and arms you'll always stay
+for our love for each other will never fade. 
+</textarea>    
+<!--<input name="dir" type="text" style="width:93%" value="http://google.com" />-->
+</form>
 
-  
 </body>
+</html>
+
 </html>
