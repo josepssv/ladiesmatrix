@@ -1,15 +1,11 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
-<htm<!DOCTYPE html>
-<html>
-<head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <title>Ladies matrix. Visual analyzer text</title>
-<meta name='author' content='' />
-<meta name='copyright' content='' />
+<meta name="author" content="">
+<meta name="copyright" content="">
+<meta charset="utf-8" />
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js"></script> 
 <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
-<script type='text/javascript' src='ladiesmatrix.js'></script>
+<script type="text/javascript" src="ladiesmatrix.js"></script>
 
 
 
@@ -191,8 +187,11 @@ a:hover {
 
 </style>
 </head>
+<body>
 
-<body onload="ini()">
+
+
+
 <div id="wrapper">
 	<div id="header">
 		<div id="logo">
@@ -210,8 +209,8 @@ a:hover {
 		       <div id="texto" style="width:400px;height:320px; margin:0px 20px 0px 0px; overflow: auto; float:left; clear:none;">
 		       </div>
 
-		       <div id="viewmatrix" style=" float:left;clear:none;">
-		       </div> 
+		       <canvas id="viewmatrixcanvas" style=" float:left;clear:none;">
+		       </canvas> 
 		
 				       		
 
@@ -222,12 +221,13 @@ a:hover {
 	</div>
 		       <div id="menu">
 		<ul>
-        		<li><a href="javascript:drawtext()">Analysis</a></li>
+        		<li><a href="javascript:ini()">Analysis</a></li>
 
-			<li><a href="javascript:readsvg()">View svg</a></li>
-			<li><a href="javascript:skin.mode=0; skin.actual='cool_and_fire'; skin.style(); drawtext()">Cool_and_fire</a></li>
-			<li><a href="javascript:skin.mode=0; skin.actual='rainbow'; skin.style(); drawtext()">Rainbow</a></li>
-			<li><a href="javascript:skin.mode=0; skin.actual='greyscale'; skin.style(); drawtext()">Grey_scale</a></li>
+			<!--<li><a href="javascript:readsvg()">View svg</a></li>
+			<li><a href="javascript:skin.mode=0; skin.actual=&#39;cool_and_fire&#39;; skin.style(); ini()">Cool_and_fire</a></li>
+			<li><a href="javascript:skin.mode=0; skin.actual=&#39;rainbow&#39;; skin.style(); ini()">Rainbow</a></li>
+			<li><a href="javascript:skin.mode=0; skin.actual=&#39;greyscale&#39;; skin.style(); ini()">Grey_scale</a></li>
+		-->
 			<!--<li><a href="javascript:skin.mode=1; skin.fase=[0,0,0]; drawtext()">Personal color</a></li>-->
 		</ul>
 		
@@ -247,9 +247,11 @@ a:hover {
 <!-- end div#wrapper -->
 
 
-<form name="uno">
-<textarea name="datos" id="datos" style="width:93%;height:150px;">
-From Friends To Lovers
+<script>
+
+</script>
+<!-- end div#wrapper -->
+<textarea id="datos" style="width:100%;height:200px;display:block">
 by Joe Vieira
 Sometimes I feel sad and sometimes I feel blue
 but whenever I see you, I'm as happy as can be
@@ -272,11 +274,9 @@ has turned into love as it should have been
 so I want you to know as a friend and lover
 that in my heart and arms you'll always stay
 for our love for each other will never fade. 
-</textarea>    
-<!--<input name="dir" type="text" style="width:93%" value="http://google.com" />-->
-</form>
+</textarea>
+	
 
+<div id="src" style="display:none;"></div>
 </body>
-</html>
-
 </html>
