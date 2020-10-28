@@ -191,7 +191,7 @@ function ini(){
  if(winner == '01'){ datos04 = datos01 }
  if(winner == '02'){ datos04 = datos02 } 
  if(winner == '03'){ datos04 = datos03 } 
-
+datos=[];
 
 for(var a = 0; a < datos04.length; a++){
   if(datos04[a].length > 2 ){ datos.push(datos04[a]) }
